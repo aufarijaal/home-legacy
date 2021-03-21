@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+    <link rel="stylesheet" href="./public/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./src/assets/favicon.png"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- <div class="toast"><span class="toast-content">No Links yet</span></div> -->
+    <div class="modal-container modal-container-visibility">
+      <div class="modal">
+        <div class="decor">
+          <span class="modal-title">Add New Link</span>
+          <svg
+            class="close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </div>
+        <form action="" class="content">
+          <input type="hidden" class="value-before-edit">
+          <label for="title" aria-autocomplete="none">Title</label>
+          <input type="text" id="title" placeholder="Title here" required/>
+          <label for="url">URL</label>
+          <input type="url" id="url" placeholder="URL here" required/>
+          <label for="select-colors">Text Color</label>
+          <select id="select-colors" required>
+            <option disabled>Choose link color</option>
+          </select>
+          <button class="btn-save btn-save-visibility">Save</button>
+          <button class="btn-update btn-update-visibility">Update</button>
+        </form>
+      </div>
+    </div>
+    <div class="main">
+      <img src="./src/assets/Saly-10.png" class="ill img-1" />
+      <img src="./src/assets/Saly-10.png" class="ill img-2" />
+      <div class="top">
+        <div class="operations">
+          <button class="btn-edit">Edit Link</button>
+          <button class="btn-new">Add new link</button>
+        </div>
+        <div class="dark-toggle-container"></div>
+      </div>
+      <div class="greeting-time-container">
+        <span class="greeting">Loading...</span>
+        <span class="clock">Loading...</span>
+        <span class="date">Loading...</span>
+      </div>
+      <div class="links-container">
+      </div>
+    </div>
+    <script type="text/javascript"> </script>
+    <script src="./public/script/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+@import "../../node_modules/sass-autoprefixer/scss/prefixes.scss",
+  "./_tailwind-colors";
+
+@mixin group {
+  width: max-content;
+  height: max-content;
+  border: none;
+  text-align: center;
+  border-radius: 99rem;
+  cursor: pointer;
+}
+
+@mixin link-style {
+  @include vp-appearance(none);
+  @include group;
+  background: $gray-100;
+  box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
+  display: flex;
+}
+@mixin buttons-style($bg-color) {
+  @include vp-appearance(none);
+  @include group;
+  background: $bg-color;
+  font-size: 1rem;
+  padding: 0.4rem 1rem;
+  color: white;
+  font-weight: 700;
+}
+@mixin modal-style {
+  .modal-container {
+    z-index: 9999;
+    position: absolute;
+    display: flex;
+    place-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+
+    &-visibility {
+      display: none;
+    }
+  }
+  .modal {
+    width: 28rem;
+    height: max-content;
+  }
+  .decor {
+    border-radius: 0.4rem 0.4rem 0 0;
+    background: $gray-800;
+    height: max-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem;
+  }
+  .modal-title {
+    color: white;
+    font-weight: 700;
+  }
+  form.content {
+    border-radius: 0 0 0.4rem 0.4rem;
+    height: 100%;
+    padding: 2rem;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  input {
+    padding: 0.6rem 0;
+    border-radius: 0.4rem;
+    height: 2rem;
+    @include vp-appearance(none);
+    border: 1px solid gray;
+    text-indent: 0.5rem;
+  }
+  .close {
+    width: 1.7rem;
+    color: white;
+    cursor: pointer;
+    
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
+@mixin btn-edit-remove-selected($svg, $icon-color, $size) {
+  @include vp-appearance(none);
+  background: url($svg) $icon-color no-repeat center center;
+  background-size: 70%;
+  border: none;
+  border-radius: 99rem;
+  width: $size;
+  height: $size;
+  cursor: pointer;
+}
+@mixin btn-edit-remove-selected-icon($size) {
+  .btn-edit-selected-link {
+    @include btn-edit-remove-selected("data:image/svg+xml, %3Csvg%20width%3D%2222%22%20height%3D%2222%22%20viewBox%3D%220%200%2022%2022%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M17.3428%207.00561L14.9942%204.65704C14.6877%204.36912%2014.286%204.20392%2013.8656%204.19285C13.4452%204.18179%2013.0354%204.32564%2012.7142%204.59704L4.99991%2012.3113C4.72285%2012.5907%204.55034%2012.9569%204.51133%2013.3485L4.14276%2016.9228C4.13122%2017.0483%204.14751%2017.1748%204.19047%2017.2934C4.23344%2017.4119%204.30202%2017.5195%204.39133%2017.6085C4.47143%2017.6879%204.56641%2017.7508%204.67084%2017.7934C4.77528%2017.8361%204.8871%2017.8577%204.99991%2017.857H5.07705L8.65133%2017.5313C9.04287%2017.4923%209.40908%2017.3198%209.68848%2017.0428L17.4028%209.32847C17.7022%209.01215%2017.864%208.59005%2017.8527%208.15464C17.8415%207.71924%2017.6581%207.30604%2017.3428%207.00561ZM14.4285%209.86847L12.1313%207.57132L13.8028%205.85704L16.1428%208.19704L14.4285%209.86847Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E", $green-500, $size);
+
+    &:hover {
+      background-color: $green-600;
+    }
+  }
+  .btn-remove-selected-link {
+    @include btn-edit-remove-selected("data:image/svg+xml,    %3Csvg%20width%3D%2218%22%20height%3D%2218%22%20viewBox%3D%220%200%2018%2018%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M15.4286%204.71433H11.8572V3.52147C11.8404%203.0642%2011.643%202.63223%2011.3083%202.32025C10.9736%202.00828%2010.5288%201.84175%2010.0715%201.85719H7.92861C7.47129%201.84175%207.02651%202.00828%206.69177%202.32025C6.35703%202.63223%206.15965%203.0642%206.14289%203.52147V4.71433H2.57146C2.38202%204.71433%202.20034%204.78958%202.06639%204.92354C1.93243%205.05749%201.85718%205.23917%201.85718%205.42861C1.85718%205.61805%201.93243%205.79974%202.06639%205.93369C2.20034%206.06765%202.38202%206.1429%202.57146%206.1429H3.28575V14C3.28575%2014.5684%203.51151%2015.1134%203.91338%2015.5153C4.31524%2015.9171%204.86029%2016.1429%205.42861%2016.1429H12.5715C13.1398%2016.1429%2013.6848%2015.9171%2014.0867%2015.5153C14.4886%2015.1134%2014.7143%2014.5684%2014.7143%2014V6.1429H15.4286C15.618%206.1429%2015.7997%206.06765%2015.9337%205.93369C16.0676%205.79974%2016.1429%205.61805%2016.1429%205.42861C16.1429%205.23917%2016.0676%205.05749%2015.9337%204.92354C15.7997%204.78958%2015.618%204.71433%2015.4286%204.71433ZM7.57146%2011.8572C7.57146%2012.0466%207.49621%2012.2283%207.36225%2012.3623C7.2283%2012.4962%207.04662%2012.5715%206.85718%2012.5715C6.66774%2012.5715%206.48606%2012.4962%206.3521%2012.3623C6.21815%2012.2283%206.14289%2012.0466%206.14289%2011.8572V9.00004C6.14289%208.8106%206.21815%208.62892%206.3521%208.49497C6.48606%208.36101%206.66774%208.28576%206.85718%208.28576C7.04662%208.28576%207.2283%208.36101%207.36225%208.49497C7.49621%208.62892%207.57146%208.8106%207.57146%209.00004V11.8572ZM7.57146%203.52147C7.57146%203.40719%207.72146%203.28576%207.92861%203.28576H10.0715C10.2786%203.28576%2010.4286%203.40719%2010.4286%203.52147V4.71433H7.57146V3.52147ZM11.8572%2011.8572C11.8572%2012.0466%2011.7819%2012.2283%2011.648%2012.3623C11.514%2012.4962%2011.3323%2012.5715%2011.1429%2012.5715C10.9535%2012.5715%2010.7718%2012.4962%2010.6378%2012.3623C10.5039%2012.2283%2010.4286%2012.0466%2010.4286%2011.8572V9.00004C10.4286%208.8106%2010.5039%208.62892%2010.6378%208.49497C10.7718%208.36101%2010.9535%208.28576%2011.1429%208.28576C11.3323%208.28576%2011.514%208.36101%2011.648%208.49497C11.7819%208.62892%2011.8572%208.8106%2011.8572%209.00004V11.8572Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A", $red-500, $size);
+
+    &:hover {
+      background-color: $red-600;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@import "../../node_modules/sass-autoprefixer/scss/prefixes.scss";
+
+@mixin rotate-center {
+  @include vp-animation(
+    "rotate-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+  );
+}
+@mixin scale-in-center {
+  @include vp-animation(
+    "scale-in-center 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both"
+  );
+}
+@mixin tracking-in-expand {
+  @include vp-animation(
+    "tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both"
+  );
+}
+@mixin rotate-scale-down {
+  @include vp-animation(
+    "rotate-scale-down 1s cubic-bezier(0.390, 0.575, 0.565, 1.000) both"
+  );
+}
+@mixin keyframes {
+  @include vp-keyframes(rotate-center) {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  @include vp-keyframes(tracking-in-expand) {
+    to {
+      letter-spacing: 1rem;
+    }
+  }
+  @include vp-keyframes(scale-in-center) {
+    0% {
+      @include vp-transform(scale(0));
+      opacity: 1;
+    }
+    100% {
+      @include vp-transform(scale(1));
+      opacity: 1;
+    }
+  }
+  @include vp-keyframes(rotate-scale-down) {
+    0% {
+      @include vp-transform(scale(1) rotateZ(0));
+    }
+    50% {
+      @include vp-transform(scale(0.7) rotateZ(180deg));
+    }
+    100% {
+      @include vp-transform(scale(1) rotateZ(360deg));
+    }
+  }
+}

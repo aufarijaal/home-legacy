@@ -1,0 +1,8 @@
+{
+    "sassVariablesHelper.route": "../src/style/__tailwind-colors.scss",
+    // "color-highlight.languages": [
+    //     "*",
+    //     "!scss"
+    // ],
+    "liveServer.settings.port": 5501,
+}
