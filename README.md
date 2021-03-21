@@ -1,5 +1,5 @@
 # :house:  Home
-Simple customizable new tab / startup page for browsers
+Simple customizable new tab / startup page for browsers. [Demo ](https://aufarijaal.github.io/home/)
 
 ### **Preview**
 - Light
