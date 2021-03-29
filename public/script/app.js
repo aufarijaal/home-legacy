@@ -327,8 +327,8 @@ const greet = () => {
 const theme = {
   light: () => {
     const linkElements = document.querySelectorAll("div.links");
-    const bgColor = tailwindColors.blueGray100;
-    const patternColor = tailwindColors.blueGray200
+    const bgColor = tailwindColors.blueGray200;
+    const patternColor = tailwindColors.blueGray300
       .split("")
       .splice(1, 6)
       .join("");
